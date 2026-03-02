@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import bgBlack from "./bg-black.png";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -18,30 +19,46 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const subject = encodeURIComponent(
+      `${formData.subject} - ${formData.name}`,
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone}\n\n` +
+        `Inquiry Type: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}`,
+    );
+
+    window.location.href = `mailto:greenwavesolutions25@gmail.com?subject=${subject}&body=${body}`;
+
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "General Inquiry",
-      message: "",
+      title: "Opening Email Client",
+      description:
+        "Your default email app should open now with your message prepared.",
     });
   };
 
   const contactInfo = [
-    { icon: User, label: "Director", value: "Kshitiz Ghimire" },
     { icon: MapPin, label: "Address", value: "Lalitpur-11, Nepal" },
-    { icon: Mail, label: "Email", value: "info@greenwavesolutions.com" },
-    { icon: Phone, label: "Phone", value: "+977-01-XXXXXXX" },
+    { icon: Mail, label: "Email", value: "greenwavesolutions25@gmail.com" },
+    { icon: Phone, label: "Phone", value: "+977-9856056373" },
     { icon: Clock, label: "Hours", value: "Sun–Fri: 9 AM – 6 PM NPT" },
   ];
 
   return (
-    <section id="contact" className="section-padding bg-gradient-dark relative">
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
+    <section id="contact" className="section-padding relative overflow-hidden">
+      {/* Background Image & Overlays */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bgBlack}
+          alt="Background"
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,8 +96,8 @@ const ContactSection = () => {
 
             <div className="pt-4">
               <p className="text-sm text-muted-foreground italic">
-                Visit our headquarters for a consultation or to explore our
-                latest EV components.
+                Visit our office for a consultation or to explore our latest EV
+                components.
               </p>
             </div>
           </motion.div>
@@ -90,19 +107,19 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 space-y-6 p-10 premium-card hover-contact"
+            className="lg:col-span-3 space-y-6 p-10 premium-card"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-1.5 h-6 rounded-full bg-primary" />
               <h3 className="font-heading text-2xl font-bold tracking-tight">
-                Transmission Portal
+                Send Us a Message:
               </h3>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
-                  Identity
+                  NAME
                 </p>
                 <Input
                   placeholder="Full Name / Organization"
@@ -116,7 +133,7 @@ const ContactSection = () => {
               </div>
               <div className="space-y-2">
                 <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
-                  Communication
+                  EMAIL
                 </p>
                 <Input
                   type="email"
@@ -134,7 +151,7 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
-                  Telephony
+                  PHONE. NO
                 </p>
                 <Input
                   placeholder="Contact Number"
@@ -174,7 +191,7 @@ const ContactSection = () => {
 
             <div className="space-y-2">
               <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
-                Message Payload
+                Message
               </p>
               <Textarea
                 placeholder="Describe your technical requirements or partnership proposal..."
@@ -194,7 +211,7 @@ const ContactSection = () => {
               type="submit"
               className="w-full h-14 rounded-xl text-xs font-bold uppercase tracking-[0.2em] shadow-lg shadow-primary/10"
             >
-              Initialize Transmission
+              SUBMIT
             </Button>
           </motion.form>
         </div>

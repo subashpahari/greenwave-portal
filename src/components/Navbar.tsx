@@ -7,8 +7,9 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
 ];
+
+import logo from "./logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +17,14 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#home" className="flex items-center gap-2 group">
-          <Zap className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
+        <a href="#home" className="flex items-center gap-3 group">
+          <img
+            src={logo}
+            alt="Greenwave Solutions Logo"
+            className="h-9 w-9 object-contain transition-transform group-hover:scale-110"
+          />
           <span className="font-heading text-lg font-bold tracking-tight">
-            Greenwave Solutions<span className="text-primary"></span>
+            Greenwave Solutions
           </span>
         </a>
 
@@ -35,7 +40,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Get Quote</a>
+            <a href="#contact">Contact</a>
           </Button>
         </div>
 
@@ -64,7 +69,9 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" size="sm" asChild>
-              <a href="#contact" onClick={() => setIsOpen(false)}>Get Quote</a>
+              <a href="#contact" onClick={() => setIsOpen(false)}>
+                Get Quote
+              </a>
             </Button>
           </div>
         </div>

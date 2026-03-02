@@ -14,11 +14,11 @@ const MapSection = () => {
           className="mb-16"
         >
           <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">
-            Strategic Presence
+            Reach out to us at
           </span>
           <h2 className="font-heading text-4xl md:text-6xl font-bold mt-4 tracking-tight">
-            Global{" "}
-            <span className="text-gradient-green italic">Coordinates</span>
+            Our{" "}
+            <span className="text-gradient-green italic">Address</span>
           </h2>
         </motion.div>
 

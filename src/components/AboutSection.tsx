@@ -74,7 +74,7 @@ const AboutSection = () => {
         </motion.div>
 
         {/* Icons row */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-14 md:mb-20">
           {[
             {
               icon: Leaf,
@@ -98,7 +98,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="text-center p-8 rounded-3xl premium-card group"
+              className="text-center p-5 md:p-8 rounded-3xl premium-card group"
             >
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 mb-5">
                 <item.icon className="h-7 w-7 text-primary" />

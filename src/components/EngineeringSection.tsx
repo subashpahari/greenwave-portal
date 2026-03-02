@@ -69,7 +69,7 @@ const EngineeringSection = () => {
               className="premium-card hover-engineering group p-10 flex flex-col justify-between"
             >
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-inner">
+                <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-inner">
                   <service.icon className="h-8 w-8 text-primary" />
                 </div>
                 <div>

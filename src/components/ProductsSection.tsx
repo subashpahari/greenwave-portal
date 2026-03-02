@@ -156,7 +156,7 @@ const ProductsSection = () => {
         </div>
 
         {/* Product grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <AnimatePresence mode="popLayout">
             {filtered.map((product) => (
               <motion.div
@@ -166,7 +166,7 @@ const ProductsSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="premium-card hover-product group p-8 flex flex-col justify-between"
+                className="premium-card hover-product group p-5 md:p-8 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex justify-between items-start mb-6">

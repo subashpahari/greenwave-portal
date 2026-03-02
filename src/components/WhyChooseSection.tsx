@@ -1,52 +1,56 @@
 import { motion } from "framer-motion";
-import {
-  Award,
-  Truck,
-  Headphones,
-  DollarSign,
-  RotateCcw,
-  Clock,
-  ShieldCheck,
-  Zap,
-} from "lucide-react";
-
-const reasons = [
-  {
-    icon: Award,
-    title: "Elite OEM Standards",
-    desc: "Our components exceed standard durability benchmarks, sourced exclusively from Tier-1 manufacturers. Every part undergoes rigorous 12-point quality validation before inclusion in our elite catalog.",
-    size: "large",
-  },
-  {
-    icon: Truck,
-    title: "Swift Global Logistics",
-    desc: "Seamless, priority air-freight and maritime shipping to over 50 nations with real-time telemetry tracking for every high-value shipment.",
-    size: "medium",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Certified Reliability",
-    desc: "Comprehensive safety certifications ensuring seamless integration with modern EV architectures.",
-    size: "small",
-  },
-  {
-    icon: Zap,
-    title: "Next-Gen Engineering",
-    desc: "Leveraging cutting-edge thermal management and high-voltage efficiency in every imported module.",
-    size: "small",
-  },
-  {
-    icon: Headphones,
-    title: "Artisanal Support",
-    desc: "Direct access to our senior engineering desk for complex integration inquiries and technical troubleshooting, available 24/7.",
-    size: "medium",
-  },
-];
+import { Shield, Zap, Award, Microscope, Users, Globe } from "lucide-react";
+import bgBlack from "./bg-black.png";
 
 const WhyChooseSection = () => {
+  const reasons = [
+    {
+      icon: Shield,
+      title: "Elite OEM Standards",
+      desc: "Every component undergoes a rigorous 48-point diagnostic protocol to ensure compliance with global automotive safety and performance benchmarks.",
+    },
+    {
+      icon: Award,
+      title: "Certified Excellence",
+      desc: "Our engineering team holds Tier-1 certifications in high-voltage system integration and sustainable material sourcing.",
+    },
+    {
+      icon: Microscope,
+      title: "Advanced R&D",
+      desc: "We maintain a state-of-the-art laboratory dedicated to thermal management optimization and battery lifecycle longevity.",
+    },
+    {
+      icon: Zap,
+      title: "Rapid Deployment",
+      desc: "Localized distribution hubs ensure that technical support and part replacement are prioritized for minimal downtime.",
+    },
+    {
+      icon: Globe,
+      title: "Global Supply Chain",
+      desc: "Strategic partnerships with the world's leading rare-earth material suppliers guarantee a stable and ethical manufacturing pipeline.",
+    },
+    {
+      icon: Users,
+      title: "Strategic Advisory",
+      desc: "Beyond parts, we provide comprehensive consultancy for fleet electrification and infrastructure transition planning.",
+    },
+  ];
+
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="mesh-gradient" />
+    <section
+      id="why-choose"
+      className="section-padding relative overflow-hidden"
+    >
+      {/* Background Image & Overlays */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bgBlack}
+          alt="Background"
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
 
       <div className="container mx-auto relative z-10">
         <motion.div
@@ -79,8 +83,8 @@ const WhyChooseSection = () => {
               className="premium-card hover-why group p-10 flex flex-col justify-between h-full"
             >
               <div>
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 shadow-inner relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 shadow-inner relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-neutral-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <item.icon className="h-8 w-8 text-primary relative z-10" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors text-balance">

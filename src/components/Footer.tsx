@@ -1,4 +1,5 @@
-import { Zap } from "lucide-react";
+import { Linkedin, Facebook, Twitter, Instagram } from "lucide-react";
+import logo from "./logo.png";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -9,10 +10,30 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Twitter", href: "#" },
-  { label: "Instagram", href: "#" },
+  {
+    label: "LinkedIn",
+    href: "#",
+    icon: Linkedin,
+    color: "hover:text-[#0A66C2] hover:bg-[#0A66C2]/10",
+  },
+  {
+    label: "Facebook",
+    href: "#",
+    icon: Facebook,
+    color: "hover:text-[#1877F2] hover:bg-[#1877F2]/10",
+  },
+  {
+    label: "Twitter",
+    href: "#",
+    icon: Twitter,
+    color: "hover:text-[#1DA1F2] hover:bg-[#1DA1F2]/10",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    icon: Instagram,
+    color: "hover:text-[#E4405F] hover:bg-[#E4405F]/10",
+  },
 ];
 
 const Footer = () => {
@@ -22,22 +43,34 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Zap className="h-6 w-6 text-primary" />
-              <span className="font-heading text-lg font-bold">Greenwave Solutions</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src={logo}
+                alt="Greenwave Solutions"
+                className="h-8 w-8 object-contain"
+              />
+              <span className="font-heading text-lg font-bold">
+                Greenwave Solutions
+              </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Leading the charge in premium EV components and sustainable engineering solutions across the globe.
+              Leading the charge in premium EV components and sustainable
+              engineering solutions across the globe.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-semibold mb-4 text-sm">Quick Links</h4>
+            <h4 className="font-heading font-semibold mb-4 text-sm">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -48,15 +81,15 @@ const Footer = () => {
           {/* Social */}
           <div>
             <h4 className="font-heading font-semibold mb-4 text-sm">Connect</h4>
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors text-xs font-medium"
+                  className={`w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-muted-foreground transition-all duration-300 ${link.color} border border-transparent hover:border-current/20`}
                   aria-label={link.label}
                 >
-                  {link.label[0]}
+                  <link.icon className="h-5 w-5" />
                 </a>
               ))}
             </div>
@@ -64,7 +97,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-6 border-t border-border text-center text-xs text-muted-foreground">
-          © 2024 Greenwave Solutions Pvt. Ltd. All rights reserved.
+          © 2026 Greenwave Solutions Pvt. Ltd. All rights reserved.
         </div>
       </div>
     </footer>

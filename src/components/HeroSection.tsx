@@ -49,17 +49,6 @@ const HeroSection = () => {
             </Button>
           </div>
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.a
-          href="#about"
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="text-xs tracking-widest uppercase">Scroll Down</span>
-          <ChevronDown className="h-4 w-4" />
-        </motion.a>
       </div>
     </section>
   );
