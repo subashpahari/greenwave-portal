@@ -66,7 +66,7 @@ const EngineeringSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="premium-card hover-engineering group p-10 flex flex-col justify-between"
+              className="premium-card hover-engineering group p-6 md:p-10 flex flex-col justify-between"
             >
               <div className="flex items-start gap-6">
                 <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-inner">

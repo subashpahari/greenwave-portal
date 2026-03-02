@@ -72,7 +72,7 @@ const WhyChooseSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {reasons.map((item, i) => (
             <motion.div
               key={item.title}
@@ -80,7 +80,7 @@ const WhyChooseSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="premium-card hover-why group p-10 flex flex-col justify-between h-full"
+              className="premium-card hover-engineering group p-6 md:p-10 flex flex-col justify-between h-full"
             >
               <div>
                 <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 shadow-inner relative overflow-hidden">

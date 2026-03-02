@@ -107,7 +107,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 space-y-6 p-10 premium-card"
+            className="lg:col-span-3 space-y-6 p-5 md:p-10 premium-card"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-1.5 h-6 rounded-full bg-primary" />
