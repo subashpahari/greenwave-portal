@@ -45,7 +45,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="section-padding bg-gradient-dark relative">
       <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
-      <div className="container mx-auto relative z-10">
+      <div className="container px-2 md:mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

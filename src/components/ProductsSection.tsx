@@ -94,7 +94,7 @@ const ProductsSection = () => {
       </div>
 
       <div className="absolute inset-0 ring-pattern pointer-events-none z-1" />
-      <div className="container mx-auto relative z-10">
+      <div className="container px-4 md:mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -110,12 +110,12 @@ const ProductsSection = () => {
         </motion.div>
 
         {/* Model tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+        <div className="flex flex-nowrap overflow-x-auto scrollbar-hide gap-2 mb-8 pb-2 px-1 -mx-1">
           {models.map((model) => (
             <button
               key={model}
               onClick={() => setActiveModel(model)}
-              className={`px-4 py-2 rounded-xl text-xs font-medium transition-all duration-300 border ${
+              className={`px-4 py-2 rounded-xl text-xs font-medium transition-all duration-300 border whitespace-nowrap ${
                 activeModel === model
                   ? "bg-primary text-primary-foreground border-primary glow-green-sm"
                   : "bg-card/40 backdrop-blur-md border-border text-muted-foreground hover:border-primary/40"
@@ -128,10 +128,10 @@ const ProductsSection = () => {
         </div>
 
         {/* Category filter */}
-        <div className="flex justify-center gap-2 mb-12">
+        <div className="flex flex-nowrap overflow-x-auto scrollbar-hide gap-2 mb-12 pb-2 px-1 -mx-1">
           <button
             onClick={() => setActiveCategory(null)}
-            className={`px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-wider font-semibold transition-all border ${
+            className={`px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-wider font-semibold transition-all border whitespace-nowrap ${
               activeCategory === null
                 ? "border-primary/40 text-primary bg-primary/10"
                 : "border-border text-muted-foreground hover:text-foreground"
@@ -143,7 +143,7 @@ const ProductsSection = () => {
             <button
               key={cat.name}
               onClick={() => setActiveCategory(cat.name)}
-              className={`px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-wider font-semibold transition-all border flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-wider font-semibold transition-all border flex items-center gap-1.5 whitespace-nowrap ${
                 activeCategory === cat.name
                   ? "border-primary/40 text-primary bg-primary/10"
                   : "border-border text-muted-foreground hover:text-foreground"
