@@ -22,7 +22,13 @@ const ContactSection = () => {
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",
     });
-    setFormData({ name: "", email: "", phone: "", subject: "General Inquiry", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "General Inquiry",
+      message: "",
+    });
   };
 
   const contactInfo = [
@@ -43,7 +49,9 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-xs tracking-widest uppercase text-primary font-medium">Reach Out</span>
+          <span className="text-xs tracking-widest uppercase text-primary font-medium">
+            Reach Out
+          </span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold mt-3">
             Get In <span className="text-gradient-green">Touch</span>
           </h2>
@@ -69,70 +77,124 @@ const ContactSection = () => {
               </div>
             ))}
 
-            {/* Map placeholder */}
-            <div className="w-full h-48 rounded-2xl bg-card border border-border flex items-center justify-center overflow-hidden">
-              <iframe
-                title="Greenwave Solutions Location"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=85.30%2C27.66%2C85.34%2C27.69&layer=mapnik"
-                className="w-full h-full border-0 opacity-60"
-                loading="lazy"
-              />
+            <div className="pt-4">
+              <p className="text-sm text-muted-foreground italic">
+                Visit our headquarters for a consultation or to explore our
+                latest EV components.
+              </p>
             </div>
           </motion.div>
 
-          {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 space-y-5 p-8 rounded-2xl bg-card border border-border"
+            className="lg:col-span-3 space-y-6 p-10 premium-card hover-contact"
           >
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Input
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-1.5 h-6 rounded-full bg-primary" />
+              <h3 className="font-heading text-2xl font-bold tracking-tight">
+                Transmission Portal
+              </h3>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
+                  Identity
+                </p>
+                <Input
+                  placeholder="Full Name / Organization"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  required
+                  className="bg-white/5 border-white/10 h-12 rounded-xl focus:ring-primary/20"
+                />
+              </div>
+              <div className="space-y-2">
+                <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
+                  Communication
+                </p>
+                <Input
+                  type="email"
+                  placeholder="Secure Email Address"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  required
+                  className="bg-white/5 border-white/10 h-12 rounded-xl focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
+                  Telephony
+                </p>
+                <Input
+                  placeholder="Contact Number"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  className="bg-white/5 border-white/10 h-12 rounded-xl"
+                />
+              </div>
+              <div className="space-y-2">
+                <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
+                  Inquiry Type
+                </p>
+                <select
+                  value={formData.subject}
+                  onChange={(e) =>
+                    setFormData({ ...formData, subject: e.target.value })
+                  }
+                  className="flex h-12 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+                >
+                  <option className="bg-[#0A0D12]">
+                    Strategic Partnership
+                  </option>
+                  <option className="bg-[#0A0D12]">
+                    Technical Specification Request
+                  </option>
+                  <option className="bg-[#0A0D12]">
+                    Logistics & Distribution
+                  </option>
+                  <option className="bg-[#0A0D12]">
+                    Engineering Consultation
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">
+                Message Payload
+              </p>
+              <Textarea
+                placeholder="Describe your technical requirements or partnership proposal..."
+                rows={5}
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 required
-                className="bg-muted border-border"
-              />
-              <Input
-                type="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="bg-muted border-border"
+                className="bg-white/5 border-white/10 rounded-xl resize-none focus:ring-primary/20"
               />
             </div>
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Input
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="bg-muted border-border"
-              />
-              <select
-                value={formData.subject}
-                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="flex h-10 w-full rounded-md border border-border bg-muted px-3 py-2 text-sm text-foreground"
-              >
-                <option>General Inquiry</option>
-                <option>Product Request</option>
-                <option>Engineering Services</option>
-                <option>Partnership</option>
-              </select>
-            </div>
-            <Textarea
-              placeholder="Your Message"
-              rows={5}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              required
-              className="bg-muted border-border resize-none"
-            />
-            <Button variant="hero" size="lg" type="submit" className="w-full">
-              Send Message
+
+            <Button
+              variant="hero"
+              size="lg"
+              type="submit"
+              className="w-full h-14 rounded-xl text-xs font-bold uppercase tracking-[0.2em] shadow-lg shadow-primary/10"
+            >
+              Initialize Transmission
             </Button>
           </motion.form>
         </div>

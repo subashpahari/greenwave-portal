@@ -19,7 +19,7 @@ const Navbar = () => {
         <a href="#home" className="flex items-center gap-2 group">
           <Zap className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
           <span className="font-heading text-lg font-bold tracking-tight">
-            Greenwave<span className="text-primary">.</span>
+            Greenwave Solutions<span className="text-primary"></span>
           </span>
         </a>
 

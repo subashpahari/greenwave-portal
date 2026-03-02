@@ -14,9 +14,10 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt="Electric vehicle technology visualization"
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+        <div className="mesh-gradient opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
       </div>
 
       {/* Content */}
