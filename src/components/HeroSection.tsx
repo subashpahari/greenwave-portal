@@ -33,7 +33,7 @@ const HeroSection = () => {
 
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl mx-auto">
             Powering the Future of{" "}
-            <span className="text-gradient-green">Electric Mobility</span>
+            <span className="text-gradient-green">Sustainable Mobility</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
