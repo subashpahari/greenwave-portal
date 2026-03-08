@@ -3,10 +3,13 @@ import { Compass, Shield, Terminal, Activity, ArrowRight } from "lucide-react";
 
 const MapSection = () => {
   return (
-    <section className="section-padding relative overflow-hidden bg-[#0A0D12]">
-      <div className="mesh-gradient opacity-30" />
+    <section
+      id="location"
+      className="py-20 px-2 md:px-16 bg-background relative overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-gradient-radial pointer-events-none opacity-40" />
 
-      <div className="container mx-auto relative z-10">
+      <div className="container px-0 md:mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,8 +20,7 @@ const MapSection = () => {
             Reach out to us at
           </span>
           <h2 className="font-heading text-4xl md:text-6xl font-bold mt-4 tracking-tight">
-            Our{" "}
-            <span className="text-gradient-green italic">Address</span>
+            Our <span className="text-gradient-green italic">Address</span>
           </h2>
         </motion.div>
 

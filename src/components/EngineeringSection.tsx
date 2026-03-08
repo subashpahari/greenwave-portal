@@ -43,7 +43,7 @@ const EngineeringSection = () => {
       className="section-padding bg-gradient-dark relative"
     >
       <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
-      <div className="container mx-auto relative z-10">
+      <div className="container px-2 md:mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,9 +66,9 @@ const EngineeringSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="premium-card hover-engineering group p-6 md:p-10 flex flex-col justify-between"
+              className="premium-card hover-engineering group p-5 md:p-10 flex flex-col justify-between"
             >
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-4 md:gap-6">
                 <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-inner">
                   <service.icon className="h-8 w-8 text-primary" />
                 </div>

@@ -155,7 +155,15 @@
   }
 
   .section-padding {
-    @apply py-24 md:py-32 px-4 md:px-16;
+    @apply py-24 md:py-32 px-3 md:px-16;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   /* Glassmorphism utility */
